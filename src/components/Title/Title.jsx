@@ -61,7 +61,9 @@ export default function Title() {
           >
             <a href="mailto:alsher.info@gmail.com" target='_blank'>
               <Tooltip title={t('send email')} placement={language === 'arabic' ? 'left' : 'right'}>
-                <Avatar className='Avatar' alt="Baraa Alsher" src="/public/images/logo.png" />
+              <Avatar className='Avatar' alt="Baraa Alsher" src={window.location.origin + '/public/images/logo.png'} />
+
+
               </Tooltip>
             </a>
           </StyledBadge>
