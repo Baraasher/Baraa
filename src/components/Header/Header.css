@@ -1,1 +1,31 @@
-:root{--hue:207;--sat:90%;--lig:61%;--first-color:#2980b9;--first-color-alt:#287aa9;--title-color:#2c2f3b;--text-color:#737c8e;--text-color-light:#b2b9c4;--text-color-lighten:#eaecf1;--body-color:#ffffff;--container-color:#fff;--body-font:'Poppins',sans-serif;--h2-font-size:1.25rem;--h3-font-size:1rem;--normal-font-size:.938rem;--small-font-size:.813rem;--smaller-font-size:.75rem}body.dark-theme{--title-color:#ededf0;--text-color:#c4cdd3;--body-color:#0e1c2d;--container-color:#3d4a5b}.top-bar aside:nth-child(2) div{box-shadow:none!important;border:none!important;outline:none!important;display:flex;align-items:center;justify-content:end}.css-1d3z3hw-MuiOutlinedInput-notchedOutline{border:unset!important;box-shadow:unset!important}.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper{box-shadow:rgba(0,0,0,.02) 0 1px 3px 0,rgba(27,31,35,.15) 0 0 0 1px!important}.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input{display:flex!important;justify-content:center!important;align-items:center!important}.headerIcon,.headerLang{-webkit-animation-duration:.3s!important;animation-duration:.3s!important}
+
+
+.top-bar aside:nth-child(2) div {
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: end
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+    border: unset !important;
+    box-shadow: unset !important
+}
+
+.css-1ka5eyc-MuiPaper-root-MuiMenu-paper-MuiPopover-paper {
+    box-shadow: rgba(0, 0, 0, .02) 0 1px 3px 0, rgba(27, 31, 35, .15) 0 0 0 1px !important
+}
+
+.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important
+}
+
+.headerIcon,
+.headerLang {
+    -webkit-animation-duration: .3s !important;
+    animation-duration: .3s !important
+}

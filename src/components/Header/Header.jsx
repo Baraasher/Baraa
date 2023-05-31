@@ -12,31 +12,20 @@ import './Header.css';
 import 'animate.css';
 import { useTranslation } from 'react-i18next';
 import i18next from 'i18next';
+
 const languageOptions = [
   { value: 'ar', label: 'عربي', direction: 'rtl', icon: <LanguageIcon /> },
   { value: 'en', label: 'English', direction: 'ltr', icon: <LanguageIcon /> },
 ];
+
 function Header() {
   const [age, setAge] = useState('');
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [selectedLanguage, setSelectedLanguage] = useState(null);
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[1]);
   const [languageDirection, setLanguageDirection] = useState('ltr');
   const { t, i18n } = useTranslation();
+
   useEffect(() => {
-    // Retrieve light mode preference from localStorage
-    const savedMode = localStorage.getItem('isDarkMode');
-    setIsDarkMode(savedMode === 'true');
-    // Retrieve language preference from localStorage
-    const savedLanguage = localStorage.getItem('selectedLanguage');
-    setSelectedLanguage(
-      savedLanguage
-        ? languageOptions.find((option) => option.value === savedLanguage)
-        : null
-    );
-  }, []);
-  useEffect(() => {
-    // Save light mode preference to localStorage
-    localStorage.setItem('isDarkMode', isDarkMode);
     // Apply dark mode theme
     const theme = createTheme({
       palette: {
@@ -61,27 +50,31 @@ function Header() {
       document.body.classList.remove('darkMode');
     }
   }, [isDarkMode]);
+
   useEffect(() => {
     // Update the language whenever selectedLanguage changes
     if (selectedLanguage) {
       i18n.changeLanguage(selectedLanguage.value);
-      localStorage.setItem('selectedLanguage', selectedLanguage.value);
       document.body.dir = selectedLanguage.direction;
       setLanguageDirection(selectedLanguage.direction);
     }
   }, [selectedLanguage, i18n]);
+
   const handleChange = (event) => {
     setAge(event.target.value);
   };
+
   const handleDarkModeToggle = () => {
     setIsDarkMode((prevMode) => !prevMode);
   };
+
   const handleLanguageChange = (event) => {
     const selectedValue = event.target.value;
     const selectedOption = languageOptions.find((option) => option.value === selectedValue);
     setSelectedLanguage(selectedOption);
     setLanguageDirection(selectedOption.direction);
   };
+
   return (
     <ThemeProvider theme={createTheme({ palette: { mode: 'dark' } })}>
       <header
@@ -162,4 +155,5 @@ function Header() {
     </ThemeProvider>
   );
 }
+
 export default Header;
