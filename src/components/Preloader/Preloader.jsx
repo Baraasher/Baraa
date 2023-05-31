@@ -12,11 +12,7 @@ const Preloader = () => {
 
   useEffect(() => {
     const bodyElement = document.body;
-    if (isLoading) {
-      bodyElement.style.overflow = 'hidden';
-    } else {
-      bodyElement.style.overflow = 'auto';
-    }
+
   }, [isLoading]);
 
   return isLoading ? (

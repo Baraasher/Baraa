@@ -80,10 +80,10 @@ function Header() {
       <header
         style={{ marginTop: '1rem' }}
         className="top-bar flexRowSpaceBetween animate__animated animate__fadeIn"
-        dir={languageDirection}
+        dir='ltr'
       >
         <aside>
-          <Tooltip title={isDarkMode ? t('light mode') : t('dark mode')}>
+          <Tooltip title={isDarkMode ? t('dark mode') : t('light mode')}>
             <div
               onClick={handleDarkModeToggle}
               style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}

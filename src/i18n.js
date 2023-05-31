@@ -14,6 +14,7 @@ const resources = {
             "footer": "Baraa - All rights reserved.",
             "dark mode": "dark mode",
             "light mode": "light mode",
+            "send email" : "send email now ✉️",
         }
     },
     ar: {
@@ -29,6 +30,8 @@ const resources = {
             "footer": "براء",
             "dark mode": "الوضع اليلي",
             "light mode": "الوضع النهاري",
+            "send email" : "أرسل ايميل الأن ✉️",
+
         }
     }
 };

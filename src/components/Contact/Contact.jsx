@@ -7,16 +7,16 @@ import './Contact.css';
 export default function Contact() {
   return (
     <div className="contact-timeline">
-      <a href="https://github.com" className="contact-icon">
+      <a href="https://github.com/Baraasher" className="contact-icon">
         <GitHubIcon className='ContactIcon' />
       </a>
-      <a href="https://linkedin.com" className="contact-icon">
+      <a href="https://www.linkedin.com/in/baraa-alsher/" className="contact-icon">
         <LinkedInIcon className='ContactIcon' />
       </a>
-      <a href="https://youtube.com" className="contact-icon">
+      <a href="https://www.youtube.com/@CodeWithBaraa" className="contact-icon">
         <YouTubeIcon className='ContactIcon' />
       </a>
-      <a href="https://whatsapp.com" className="contact-icon">
+      <a href="https://wa.me/970593493899" className="contact-icon">
         <WhatsAppIcon className='ContactIcon' />
       </a>
     </div>
