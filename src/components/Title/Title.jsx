@@ -4,12 +4,10 @@ import { Box, Typography, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Contact from '../Contact/Contact';
 import 'animate.css';
-
 import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -38,44 +36,51 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
-
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
   height: 22,
   border: `2px solid ${theme.palette.background.paper}`,
 }));
-
 export default function Title() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const language = isArabic ? 'arabic' : 'english';
-
   return (
     <>
       <Box className="animate__animated animate__fadeIn" sx={{ margin: '4rem 0 ' }}>
-        <Stack direction="row" spacing={2}>
-          <StyledBadge
-            overlap="circular"
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-            variant="dot"
-          >
-            <a href="mailto:alsher.info@gmail.com" target='_blank'>
-              <Tooltip title={t('send email')} placement={language === 'arabic' ? 'left' : 'right'}>
-              <Avatar className='Avatar' alt="Baraa Alsher" src={window.location.origin + '/public/images/logo.png'} />
 
-
-              </Tooltip>
-            </a>
-          </StyledBadge>
-        </Stack>
-
-        <br />
-        <Typography variant="h4" gutterBottom>
+      <Typography variant="h6" gutterBottom>
           {t('Title')}
         </Typography>
-        <Typography variant="h6" gutterBottom>
+        <Typography variant="body1" gutterBottom>
           {t('Job Title')}
         </Typography>
+<br />
+
+
+<Box sx={{ display: "flex", justifyContent: "start", alignItems: "center", gap: "2rem", flexDirection: "row" }}>
+
+
+<Stack direction="row" spacing={2}>
+  <StyledBadge
+    overlap="circular"
+    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+    variant="dot"
+  >
+    <a href="mailto:alsher.info@gmail.com" target='_blank'>
+      <Tooltip title={t('send email')} placement={language === 'arabic' ? 'right' : 'left'}>
+        <Avatar className="Avatar" alt="Baraa Alsher" src={'https://cdn.dribbble.com/userupload/7461041/file/original-bc0db5f06f174efb4bcfdbe1d7f78f86.png?compress=1&resize=400x400'} style={{ width: 70, height: 70 }} />
+      </Tooltip>
+    </a>
+  </StyledBadge>
+</Stack>
+
+   
+        <Contact />
+
+
+        </Box>
+
         <br />
         <Typography variant="body2" gutterBottom>
           {t('Description')}
@@ -137,7 +142,6 @@ export default function Title() {
           </a>
         </Typography>
         <br />
-        <Contact />
       </Box>
     </>
   );

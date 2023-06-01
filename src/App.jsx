@@ -19,7 +19,7 @@ function App() {
 
       <Preloader/>
       <CssBaseline />
-      <Container sx={{ minHeight: '100vh' }} maxWidth="md">
+      <Container sx={{ minHeight: '100vh' }} maxWidth="sm" fixed>
         <Box >
           <Header />
           <Title />
