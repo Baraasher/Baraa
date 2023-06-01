@@ -40,7 +40,3 @@ Make sure to add the required environment variables to your Vercel project setti
 
 <br>
 
-<div align="center">
-  <img src="https://cdn.dribbble.com/userupload/7461041/file/original-bc0db5f06f174efb4bcfdbe1d7f78f86.png?compress=1&resize=400x400" height="100">
-  <p align="center">Baraa</p>
-</div>
