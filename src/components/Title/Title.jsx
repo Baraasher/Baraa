@@ -49,34 +49,34 @@ export default function Title() {
     <>
       <Box className="animate__animated animate__fadeIn" sx={{ margin: '4rem 0 ' }}>
 
-      <Typography variant="h6" gutterBottom>
+        <Typography variant="h6" gutterBottom>
           {t('Title')}
         </Typography>
         <Typography variant="body1" gutterBottom>
           {t('Job Title')}
         </Typography>
-<br />
+        <br />
 
 
-<Box sx={{ display: "flex", justifyContent: "start", alignItems: "center", gap: "2rem", flexDirection: "row" }}>
+        <Box sx={{ display: "flex", justifyContent: "start", alignItems: "center", gap: "2rem", flexDirection: "row" }}>
 
 
-<Stack direction="row" spacing={2}>
-  <StyledBadge
-    overlap="circular"
-    anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-    variant="dot"
-  >
-    <a href="mailto:alsher.info@gmail.com" target='_blank'>
-      <Tooltip title={t('send email')} placement={language === 'arabic' ? 'right' : 'left'}>
-        <Avatar className="Avatar" alt="Baraa Alsher" src={'https://cdn.dribbble.com/userupload/7461041/file/original-bc0db5f06f174efb4bcfdbe1d7f78f86.png?compress=1&resize=400x400'} style={{ width: 70, height: 70 }} />
-      </Tooltip>
-    </a>
-  </StyledBadge>
-</Stack>
+          <Stack direction="row" spacing={2}>
+            <StyledBadge
+              overlap="circular"
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+              variant="dot"
+            >
+              <a href="mailto:alsher.info@gmail.com" target='_blank'>
+                <Tooltip title={t('send email')} placement={language === 'arabic' ? 'right' : 'left'}>
+                  <Avatar className="Avatar" alt="Baraa Alsher" src={'https://cdn.dribbble.com/userupload/7461041/file/original-bc0db5f06f174efb4bcfdbe1d7f78f86.png?compress=1&resize=400x400'} style={{ width: 70, height: 70 }} />
+                </Tooltip>
+              </a>
+            </StyledBadge>
+          </Stack>
 
-   
-        <Contact />
+
+          <Contact />
 
 
         </Box>
@@ -108,13 +108,13 @@ export default function Title() {
           <li className='item'>
             {!isArabic && (
               <Tooltip placement="right" title={"🗒️Effortlessly Preserve and Organize Your Notes"}>
-                <a id='linkItem' target='_blank' href="https://shortnote.vercel.app/">
+                <a id='linkItem' target='_blank' href="https://theshortnote.netlify.app/">
                   {t('SNote')}
                 </a>
               </Tooltip>
             )}
             {isArabic && (
-              <a id='linkItem' target='_blank' href="https://shortnote.vercel.app/">
+              <a id='linkItem' target='_blank' href="https://theshortnote.netlify.app/">
                 {t('SNote')}
               </a>
             )}
@@ -135,9 +135,9 @@ export default function Title() {
           </li>
         </div>
         <br />
-        <Typography variant="body2" gutterBottom>
+        <Typography  variant="body2" gutterBottom>
           {t('mailto')}
-          <a className='mailLink' target='_blank' href="mailto:alsher.info@gmail.com">
+          <a className='mailLink' id="mailLink" target='_blank' href="mailto:alsher.info@gmail.com">
             alsher.info@gmail.com
           </a>
         </Typography>

@@ -102,7 +102,7 @@ function Header() {
             </div>
           </Tooltip>
         </aside>
-        <aside style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <aside id='lang' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'  }}>
           <Box sx={{ minWidth: 100 }}>
             <div>
               <Select
