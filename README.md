@@ -1,42 +1,20 @@
+
+<div align="left">
+    <img src="https://cdn.dribbble.com/userupload/7461041/file/original-bc0db5f06f174efb4bcfdbe1d7f78f86.png?compress=1&resize=50x50" alt="Logo" />
+</div>
+
 ## Technologies
 
-Frontend:
-- [MIUI](https://mui.com/) (React UI Tools)
-- [i18next](https://react.i18next.com/guides/quick-start) (Language)
-- [vitejs](https://vitejs.dev/) (Development Environment)
-- [animate](https://animate.style/) (Animations)
+This project utilizes the following technologies:
 
-## Prerequisites
+- [MIUI](https://mui.com/): A comprehensive set of React UI tools that provide a rich and customizable user interface.
 
-Before you begin, make sure you have the following:
+- [i18next](https://react.i18next.com/guides/quick-start): A powerful internationalization framework for React applications, allowing for easy translation and localization.
 
-- Node.js installed on your local machine
-- PlanetScale account
-- Prisma CLI installed (npm i -g prisma)
+- [vitejs](https://vitejs.dev/): A fast and efficient development environment for building modern web applications. It offers features like instant server startup, hot module replacement, and optimized production builds.
 
-## Installation
+- [animate](https://animate.style/): A library that provides a collection of CSS animations that can be easily applied to elements on a webpage.
 
-To get started with the project, follow these steps:
+---
 
-1. Clone this repository to your local machine.
-2. Install dependencies by running `pnpm install`.
-3. Copy the `.env.example` file and rename it to `.env.local`. Update the environment variables in the `.env.local` file as needed.
-4. Start the development server with `pnpm dev`.
-
-## Deployment
-
-This project can be easily deployed to [Vercel](https://vercel.com/new/clone). Follow these steps to deploy it:
-
-1. Connect your Vercel account to your GitHub repository.
-2. Vercel will automatically build and deploy your application with each new push to the main branch.
-
-Alternatively, you can use the Vercel CLI to deploy your application directly from your local machine.
-
-Make sure to add the required environment variables to your Vercel project settings.
-
-<br>
-
-<hr>
-
-<br>
-
+Created by Baraa
