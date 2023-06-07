@@ -39,8 +39,8 @@ export default function Contact() {
       case 'githubIcon':
         if (isHovered) {
 
-          linkedIcon.style.opacity = '70%';
-          youtubeIcon.style.opacity = '70%';
+          linkedIcon.style.opacity = '60%';
+          youtubeIcon.style.opacity = '60%';
 
         } else {
           linkedIcon.style.opacity = '100%';
@@ -51,8 +51,8 @@ export default function Contact() {
         if (isHovered) {
 
 
-          githubIcon.style.opacity = '70%';
-          youtubeIcon.style.opacity = '70%';
+          githubIcon.style.opacity = '60%';
+          youtubeIcon.style.opacity = '60%';
         } else {
 
           githubIcon.style.opacity = '100%';
@@ -62,8 +62,8 @@ export default function Contact() {
       case 'youtubeIcon':
         if (isHovered) {
 
-          githubIcon.style.opacity = '70%';
-          linkedIcon.style.opacity = '70%';
+          githubIcon.style.opacity = '60%';
+          linkedIcon.style.opacity = '60%';
         } else {
           githubIcon.style.opacity = '100%';
           linkedIcon.style.opacity = '100%';

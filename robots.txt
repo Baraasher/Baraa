@@ -1,6 +1,24 @@
+
 User-agent: *
 Disallow:
 
-Sitemap: https://example.com/sitemap1.xml
-Sitemap: https://example.com/sitemap2.xml
-Sitemap: https://example.com/sitemap3.xml
+Sitemap: https://alsher.vercel.app/
+Sitemap: https://github.com/Baraasher/
+Sitemap: https://www.linkedin.com/in/baraa-alsher/
+Sitemap: https://www.youtube.com/@CodeWithBaraa
+Sitemap: https://timescape-liart.vercel.app/
+Sitemap: https://theshortnote.netlify.app/
+Sitemap: https://gradientscss.vercel.app/
+Sitemap: https://kafu.jobs/
+Sitemap: https://baaeed.com/
+Sitemap: https://remoteok.com/
+Sitemap: https://justremote.co/
+Sitemap: https://wellfound.com/
+Sitemap: https://weworkremotely.com/
+Sitemap: https://jsremotely.com/
+Sitemap: https://www.upwork.com/
+Sitemap: https://www.upwork.com/freelancers/~013eff2de8129f9f9c
+Sitemap: https://www.peopleperhour.com/
+Sitemap: https://www.peopleperhour.com/freelancer/baraa-alsher-full-stack-frontend-developer-with-jyyjxwz
+Sitemap: https://www.fiverr.com/baraa_sher?up_rollout=true
+Sitemap: https://www.fiverr.com/
