@@ -8,6 +8,7 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -36,19 +37,21 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     },
   },
 }));
+
 const SmallAvatar = styled(Avatar)(({ theme }) => ({
   width: 22,
   height: 22,
   border: `2px solid ${theme.palette.background.paper}`,
 }));
+
 export default function Title() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const language = isArabic ? 'arabic' : 'english';
+
   return (
     <>
       <Box className="animate__animated animate__fadeIn" sx={{ margin: '4rem 0 ' }}>
-
         <Typography variant="h6" gutterBottom>
           {t('Title')}
         </Typography>
@@ -56,37 +59,24 @@ export default function Title() {
           {t('Job Title')}
         </Typography>
         <br />
-
-
         <Box sx={{ display: "flex", justifyContent: "start", alignItems: "center", gap: "2rem", flexDirection: "row" }}>
-
-
           <Stack direction="row" spacing={2}>
-            <StyledBadge
-              overlap="circular"
-              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-              variant="dot"
-            >
-              <a href="mailto:alsher.info@gmail.com" target='_blank'>
+            <StyledBadge overlap="circular" anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }} variant="dot">
+              <a href="mailto:alsher.info@gmail.com" target='_blank' rel='noopener noreferrer'>
                 <Tooltip title={t('send email')} placement={language === 'arabic' ? 'right' : 'left'}>
                   <Avatar className="Avatar" alt="Baraa Alsher" src={'https://cdn.dribbble.com/userupload/7461041/file/original-bc0db5f06f174efb4bcfdbe1d7f78f86.png?compress=1&resize=400x400'} style={{ width: 70, height: 70 }} />
                 </Tooltip>
               </a>
             </StyledBadge>
           </Stack>
-
-
           <Contact />
-
-
         </Box>
-
         <br />
         <Typography variant="body2" gutterBottom>
           {t('Description')}
         </Typography>
         <br />
-        <Typography variant="body2" display="block" gutterBottom>
+        <Typography className='FollowDescription' variant="body2" display="block" gutterBottom>
           {t('Follow Description')}
         </Typography>
         <br />
@@ -94,27 +84,27 @@ export default function Title() {
           <li className='item'>
             {!isArabic && (
               <Tooltip placement="right" title={"📅 Seamlessly Capture and Enhance Your Note-Taking Experience"}>
-                <a id='linkItem' target='_blank' href="https://timescape-liart.vercel.app/">
+                <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://timescape-liart.vercel.app/">
                   {t('Timescape')}
                 </a>
               </Tooltip>
             )}
             {isArabic && (
-              <a id='linkItem' target='_blank' href="https://timescape-liart.vercel.app/">
+              <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://timescape-liart.vercel.app/">
                 {t('Timescape')}
               </a>
             )}
           </li>
           <li className='item'>
             {!isArabic && (
-              <Tooltip placement="right" title={"🗒️Effortlessly Preserve and Organize Your Notes"}>
-                <a id='linkItem' target='_blank' href="https://theshortnote.netlify.app/">
+              <Tooltip placement="right" title={"🗒️ Effortlessly Preserve and Organize Your Notes"}>
+                <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://theshortnote.netlify.app/">
                   {t('SNote')}
                 </a>
               </Tooltip>
             )}
             {isArabic && (
-              <a id='linkItem' target='_blank' href="https://theshortnote.netlify.app/">
+              <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://theshortnote.netlify.app/">
                 {t('SNote')}
               </a>
             )}
@@ -122,22 +112,22 @@ export default function Title() {
           <li className='item'>
             {!isArabic && (
               <Tooltip placement="right" title={"🟣 UI to generate linear gradients"}>
-                <a id='linkItem' target='_blank' href="https://gradientscss.vercel.app/">
+                <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gradientscss.vercel.app/">
                   {t('Gradients CSS')}
                 </a>
               </Tooltip>
             )}
             {isArabic && (
-              <a id='linkItem' target='_blank' href="https://gradientscss.vercel.app/">
+              <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gradientscss.vercel.app/">
                 {t('Gradients CSS')}
               </a>
             )}
           </li>
         </div>
         <br />
-        <Typography  variant="body2" gutterBottom>
+        <Typography variant="body2" gutterBottom>
           {t('mailto')}
-          <a className='mailLink' id="mailLink" target='_blank' href="mailto:alsher.info@gmail.com">
+          <a className='mailLink' id="mailLink" target='_blank' rel='noopener noreferrer' href="mailto:alsher.info@gmail.com">
             alsher.info@gmail.com
           </a>
         </Typography>

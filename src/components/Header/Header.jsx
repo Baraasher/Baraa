@@ -19,14 +19,11 @@ const languageOptions = [
 ];
 
 function Header() {
-  const [age, setAge] = useState('');
+  const { t, i18n } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[1]);
-  const [languageDirection, setLanguageDirection] = useState('ltr');
-  const { t, i18n } = useTranslation();
 
   useEffect(() => {
-    // Apply dark mode theme
     const theme = createTheme({
       palette: {
         mode: isDarkMode ? 'dark' : 'light',
@@ -41,47 +38,32 @@ function Header() {
         },
       },
     });
+
     document.body.style.backgroundColor = theme.palette.background.default;
-    if (isDarkMode) {
-      document.body.classList.add('darkMode');
-      document.body.classList.remove('lightMode');
-    } else {
-      document.body.classList.add('lightMode');
-      document.body.classList.remove('darkMode');
-    }
+    document.body.classList.add(isDarkMode ? 'darkMode' : 'lightMode');
+    document.body.classList.remove(isDarkMode ? 'lightMode' : 'darkMode');
   }, [isDarkMode]);
 
   useEffect(() => {
-    // Update the language whenever selectedLanguage changes
     if (selectedLanguage) {
       i18n.changeLanguage(selectedLanguage.value);
       document.body.dir = selectedLanguage.direction;
-      setLanguageDirection(selectedLanguage.direction);
     }
   }, [selectedLanguage, i18n]);
 
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
-
   const handleDarkModeToggle = () => {
-    setIsDarkMode((prevMode) => !prevMode);
+    setIsDarkMode(prevMode => !prevMode);
   };
 
   const handleLanguageChange = (event) => {
     const selectedValue = event.target.value;
-    const selectedOption = languageOptions.find((option) => option.value === selectedValue);
+    const selectedOption = languageOptions.find(option => option.value === selectedValue);
     setSelectedLanguage(selectedOption);
-    setLanguageDirection(selectedOption.direction);
   };
 
   return (
     <ThemeProvider theme={createTheme({ palette: { mode: 'dark' } })}>
-      <header
-        style={{ marginTop: '1rem' }}
-        className="top-bar flexRowSpaceBetween animate__animated animate__fadeIn"
-        dir='ltr'
-      >
+      <header className="top-bar flexRowSpaceBetween animate__animated animate__fadeIn" dir="ltr">
         <aside>
           <Tooltip title={isDarkMode ? t('dark mode') : t('light mode')}>
             <div
@@ -89,20 +71,14 @@ function Header() {
               style={{ cursor: 'pointer', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
             >
               {isDarkMode ? (
-                <DarkModeIcon
-                  className="animate__animated animate__fadeIn headerIcon"
-                  style={{ cursor: 'pointer' }}
-                />
+                <DarkModeIcon className="animate__animated animate__fadeIn headerIcon" style={{ cursor: 'pointer' }} />
               ) : (
-                <LightModeIcon
-                  className="animate__animated animate__fadeIn headerIcon"
-                  style={{ cursor: 'pointer' }}
-                />
+                <LightModeIcon className="animate__animated animate__fadeIn headerIcon" style={{ cursor: 'pointer' }} />
               )}
             </div>
           </Tooltip>
         </aside>
-        <aside id='lang' style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between'  }}>
+        <aside id="lang" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
           <Box sx={{ minWidth: 100 }}>
             <div>
               <Select
@@ -112,11 +88,11 @@ function Header() {
                 MenuProps={{
                   anchorOrigin: {
                     vertical: 'bottom',
-                    horizontal: languageDirection === 'ltr' ? 'left' : 'right',
+                    horizontal: selectedLanguage.direction === 'ltr' ? 'left' : 'right',
                   },
                   transformOrigin: {
                     vertical: 'top',
-                    horizontal: languageDirection === 'ltr' ? 'left' : 'right',
+                    horizontal: selectedLanguage.direction === 'ltr' ? 'left' : 'right',
                   },
                   getContentAnchorEl: null,
                 }}
@@ -135,7 +111,7 @@ function Header() {
                   },
                 }}
               >
-                {languageOptions.map((option) => (
+                {languageOptions.map(option => (
                   <MenuItem
                     key={option.value}
                     value={option.value}

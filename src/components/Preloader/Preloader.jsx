@@ -5,22 +5,22 @@ const Preloader = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    window.onload = () => {
+    const handleLoad = () => {
       setIsLoading(false);
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
-  useEffect(() => {
-    const bodyElement = document.body;
-
-  }, [isLoading]);
-
   return isLoading ? (
-
     <div id='preloader'>
-    <div className="preloader-container">
-      <div className="spinner"></div>
-    </div>
+      <div className="preloader-container">
+        <div className="spinner"></div>
+      </div>
     </div>
   ) : null;
 };
