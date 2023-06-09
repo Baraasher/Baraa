@@ -20,14 +20,16 @@ function App() {
 
   return (
     <React.Fragment>
-      <Preloader />
+      {/* <Preloader /> */}
       <CssBaseline />
       <Container maxWidth="sm">
-        <Box>
+        <Box >
           <Header />
-          <Title />
-          {/* <Footer /> */}
         </Box>
+        <Box className="animate__animated animate__fadeIn">
+          <Title />
+        </Box>
+        {/* <Footer /> */}
       </Container>
     </React.Fragment>
   );

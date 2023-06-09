@@ -51,7 +51,10 @@ export default function Title() {
 
   return (
     <>
-      <Box className="animate__animated animate__fadeIn" sx={{ margin: '4rem 0 ' }}>
+      <Box sx={{ margin: '4rem 0 ' }}>
+
+
+
         <Typography variant="h6" gutterBottom>
           {t('Title')}
         </Typography>

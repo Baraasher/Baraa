@@ -17,4 +17,6 @@ This project utilizes the following technologies:
 
 ---
 
-Created by Baraa
+Created by 
+<a style="color: #edf0f1; transition: all 0.3s ease 0s; font-weight: bold; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"  href="https://alsher.vercel.app/">Baraa</a>
+
