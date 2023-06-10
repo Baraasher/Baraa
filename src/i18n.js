@@ -2,11 +2,15 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 const resources = {
     en: {
+
+
+
+
         translation: {
             Title: "Baraa Alsher",
             "Job Title": "React.js Frontend Developer",
             Description:
-                "Experienced Full-Stack Frontend Developer with a proven track record of over 3 years in developing innovative web applications. Committed to delivering clean, efficient, and responsive code. Dedicated to client satisfaction, offering 24/7 support and transparent communication. Let's collaborate and discuss your business goals. Contact me to get started!",
+                "Hello! I'm Baraa Alsher, a skilled Front End Developer specializing in creating innovative web designs and features. Proficient in HTML, CSS, JavaScript, and React, I have a proven ability to adapt quickly to new technologies. With a meticulous approach to coding, I focus on delivering high-quality solutions that meet client requirements. I excel at troubleshooting complex code issues and ensuring adherence to design standards. Through my work, I aim to create engaging websites that leave a lasting impact. Explore my website to learn more about my skills and projects.",
             "Follow Description":
                 "I'm a big fan of side-projects. You can find some of my projects below.",
             Timescape: "Timescape",
@@ -23,9 +27,9 @@ const resources = {
     ar: {
         translation: {
             Title: "براء الشاعر",
-            "Job Title": "خبير في تطوير الويب و تطبيقات الأندرويد",
+            "Job Title": "مهندس برمجيات",
             Description:
-                " مطور ويب محترف بخبرة أكثر من 3 سنوات في تطوير تطبيقات الويب الابتكارية. ملتزم بتقديم رمز نظيف وفعّال ومتجاوب. مهتم برضا العملاء وأقدم الدعم على مدار الساعة والتواصل الشفاف. بنتعاون ونناقش أهداف مشروعك. تواصل معي للبدء!",
+                " مرحبًا! أنا براء الشاعر، مهندس برمجيات متخصص في تطوير تطبيقات الويب المبتكرة. لدي خبرة قوية في لغات HTML، CSS، JavaScript وReact، وأستطيع التكيف بسهولة مع أحدث التقنيات. أهتم بشدة بتفاصيل البرمجة وأركز على تقديم حلول عالية الجودة لتلبية متطلبات العملاء. أتميز في معالجة المشاكل المعقدة في الشفرة وضمان الالتزام بمعايير التصميم. هدفي هو إنشاء تطبيقات ويب جذابة تترك أثرًا إيجابيًا.",
             "Follow Description":
                 "أنا مهتم بالمشاريع الفرعية. يمكنك العثور على بعض المشاريع الخاصة بي أدناه.",
             Timescape: "Timescape (تطبيق ويب لحفظ المواعيد أونلاين)",

@@ -124,18 +124,23 @@ export default function Title() {
               <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gradientscss.vercel.app/">
                 {t('Gradients CSS')}
               </a>
+
+
             )}
+
+
           </li>
-        </div>
+        </div >
         <br />
         <Typography variant="body2" gutterBottom>
           {t('mailto')}
           <a className='mailLink' id="mailLink" target='_blank' rel='noopener noreferrer' href="mailto:alsher.info@gmail.com">
+
             alsher.info@gmail.com
           </a>
         </Typography>
         <br />
-      </Box>
+      </Box >
     </>
   );
 }
