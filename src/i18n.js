@@ -1,11 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
+
 const resources = {
     en: {
-
-
-
-
         translation: {
             Title: "Baraa Alsher",
             "Job Title": "React.js Frontend Developer",
@@ -22,6 +19,14 @@ const resources = {
             "dark mode": "dark mode",
             "light mode": "light mode",
             "send email": "send email now ✉️",
+            formTitle: "Send Email",
+            name: "Name",
+            email: "Email",
+            typeYourMessage: "type your message",
+            send: "send",
+            github: "github",
+            linkedin: "linkedin",
+            youtube: "youtube",
         },
     },
     ar: {
@@ -40,14 +45,22 @@ const resources = {
             "dark mode": "الوضع اليلي",
             "light mode": "الوضع النهاري",
             "send email": "أرسل ايميل الأن ✉️",
+            formTitle: "ارسال ايميل",
+            name: "الاسم",
+            email: "الايميل",
+            typeYourMessage: "الرساله",
+            send: "ارسال",
+            github: "جيت هاب",
+            linkedin: "لينكد إن ",
+            youtube: "يوتيوب "
         },
     },
 };
-i18n
-    .use(initReactI18next)
-    .init({
-        resources: resources,
-        lng: "en",
-        interpolation: { escapeValue: !1 },
-    });
+
+i18n.use(initReactI18next).init({
+    resources: resources,
+    lng: "en",
+    interpolation: { escapeValue: false },
+});
+
 export default i18n;

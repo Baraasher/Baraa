@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import './Contact.css';
 import { Box, Typography } from '@mui/material';
+import { useTranslation } from 'react-i18next';
+import './Contact.css';
 
 export default function Contact() {
   const [repoCount, setRepoCount] = useState(null);
@@ -12,6 +13,10 @@ export default function Contact() {
     linkedinIcon: false,
     youtubeIcon: false,
   });
+
+  const { t, i18n } = useTranslation();
+  const isArabic = i18n.language === 'ar';
+  const language = isArabic ? 'arabic' : 'english';
 
   useEffect(() => {
     const fetchRepoCount = async () => {
@@ -31,53 +36,10 @@ export default function Contact() {
       ...prevHoverStates,
       [iconId]: isHovered,
     }));
-    const githubIcon = document.getElementById('githubIcon');
-    const linkedIcon = document.getElementById('linkedinIcon');
-    const youtubeIcon = document.getElementById('youtubeIcon');
-
-    switch (iconId) {
-      case 'githubIcon':
-        if (isHovered) {
-
-          linkedIcon.style.opacity = '60%';
-          youtubeIcon.style.opacity = '60%';
-
-        } else {
-          linkedIcon.style.opacity = '100%';
-          youtubeIcon.style.opacity = '100%';
-        }
-        break;
-      case 'linkedinIcon':
-        if (isHovered) {
-
-
-          githubIcon.style.opacity = '60%';
-          youtubeIcon.style.opacity = '60%';
-        } else {
-
-          githubIcon.style.opacity = '100%';
-          youtubeIcon.style.opacity = '100%';
-        }
-        break;
-      case 'youtubeIcon':
-        if (isHovered) {
-
-          githubIcon.style.opacity = '60%';
-          linkedIcon.style.opacity = '60%';
-        } else {
-          githubIcon.style.opacity = '100%';
-          linkedIcon.style.opacity = '100%';
-        }
-        break;
-      default:
-        break;
-    }
   };
 
   return (
     <Box className="contact-timeline flexColumnCenter">
-
-
       <a
         id="githubIcon"
         href="https://github.com/Baraasher/"
@@ -89,10 +51,9 @@ export default function Contact() {
       >
         <GitHubIcon className={`ContactIcon ${hoverStates.githubIcon ? 'hovered' : ''}`} />
         <Typography display="block" gutterBottom>
-          Github
+          {t('github')}
         </Typography>
       </a>
-
 
       <a
         id="linkedinIcon"
@@ -105,7 +66,7 @@ export default function Contact() {
       >
         <LinkedInIcon className={`ContactIcon ${hoverStates.linkedinIcon ? 'hovered' : ''}`} />
         <Typography display="block" gutterBottom>
-          LinkedIn
+          {t('linkedin')}
         </Typography>
       </a>
 
@@ -120,10 +81,9 @@ export default function Contact() {
       >
         <YouTubeIcon className={`ContactIcon ${hoverStates.youtubeIcon ? 'hovered' : ''}`} />
         <Typography display="block" gutterBottom>
-          YouTube
+          {t('youtube')}
         </Typography>
       </a>
     </Box>
   );
 }
-
