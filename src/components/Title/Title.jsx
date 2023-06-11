@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Title.css';
 import { Box, Typography, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
@@ -10,6 +10,9 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import emailjs from 'emailjs-com';
 import { Input, Modal, Button, Text, Textarea } from '@nextui-org/react';
+import toast, { Toaster } from 'react-hot-toast';
+
+
 
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -57,12 +60,43 @@ export default function Title() {
 
   const openModal = () => {
     setVisible(true);
+
   };
 
   const closeModal = () => {
     setVisible(false);
-    console.log("closed");
+
   };
+
+  const closeModelNotification = () => {
+    console.log("closed");
+
+    var messageInput = document.getElementById('messageInput');
+    var emailInput = document.getElementById('emailInput');
+
+    if (messageInput.value === '' && emailInput.value === '') {
+      toast(t('emptyFieldsMessage'), {
+        icon: '⚠️',
+      });
+    } else if (messageInput.value === '') {
+      toast(t('emptyMessageMessage'), {
+        icon: '⚠️',
+      });
+    } else if (emailInput.value === '') {
+      toast(t('emptyEmailMessage'), {
+        icon: '⚠️',
+      });
+    } else {
+      toast(t('successMessage'), {
+        icon: '✉️',
+      });
+
+      setVisible(false);
+    }
+  };
+
+
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -87,6 +121,9 @@ export default function Title() {
   return (
     <>
       <Box sx={{ margin: '4rem 0 ' }}>
+
+        <Toaster />
+
         <div>
           <Modal
             closeButton
@@ -106,10 +143,10 @@ export default function Title() {
               <form id='contactForm' ref={form} onSubmit={sendEmail}>
                 <Input name="name" placeholder={t('name')} />
                 {/* <Input name="subject" placeholder="Subject" /> */}
-                <Input name="email" placeholder={t('email')} />
-                <Textarea name="message" placeholder={t('typeYourMessage')} />
+                <Input name="email" id='emailInput' placeholder={t('email')} />
+                <Textarea name="message" id='messageInput' placeholder={t('typeYourMessage')} />
                 <Modal.Footer>
-                  <button id='contactFormSubmit' type='submit' auto onClick={closeModal}>
+                  <button id='contactFormSubmit' type='submit' auto onClick={closeModelNotification}>
                     <div className="svg-wrapper-1">
                       <div className="svg-wrapper">
                         <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

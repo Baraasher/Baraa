@@ -27,6 +27,10 @@ const resources = {
             github: "github",
             linkedin: "linkedin",
             youtube: "youtube",
+            successMessage: "Your message has been successfully sent.",
+            emptyFieldsMessage: "Please enter your email and message.",
+            emptyMessageMessage: "Please enter your message.",
+            emptyEmailMessage: "Please enter your email address."
         },
     },
     ar: {
@@ -52,7 +56,11 @@ const resources = {
             send: "ارسال",
             github: "جيت هاب",
             linkedin: "لينكد إن ",
-            youtube: "يوتيوب "
+            youtube: "يوتيوب ",
+            successMessage: "تم إرسال رسالتك بنجاح.",
+            emptyFieldsMessage: "يرجى إدخال بريدك الإلكتروني ورسالتك.",
+            emptyMessageMessage: "يرجى إدخال رسالتك.",
+            emptyEmailMessage: "يرجى إدخال عنوان بريدك الإلكتروني."
         },
     },
 };
