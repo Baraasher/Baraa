@@ -20,8 +20,18 @@ const languageOptions = [
 
 function Header() {
   const { t, i18n } = useTranslation();
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[1]);
+
+  // Retrieve dark mode preference from local storage, default to true (dark mode) if not found
+  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
+  // Retrieve selected language from local storage, default to English if not found
+  const [selectedLanguage, setSelectedLanguage] = useState(
+    JSON.parse(localStorage.getItem('selectedLanguage')) || languageOptions[1]
+  );
+
+  useEffect(() => {
+    // Save dark mode preference to local storage
+    localStorage.setItem('darkMode', isDarkMode);
+  }, [isDarkMode]);
 
   useEffect(() => {
     const theme = createTheme({
@@ -55,11 +65,16 @@ function Header() {
     setIsDarkMode(prevMode => !prevMode);
   };
 
-  const handleLanguageChange = (event) => {
+  const handleLanguageChange = event => {
     const selectedValue = event.target.value;
     const selectedOption = languageOptions.find(option => option.value === selectedValue);
     setSelectedLanguage(selectedOption);
   };
+
+  useEffect(() => {
+    // Save selected language to local storage
+    localStorage.setItem('selectedLanguage', JSON.stringify(selectedLanguage));
+  }, [selectedLanguage]);
 
   return (
     <ThemeProvider theme={createTheme({ palette: { mode: 'dark' } })}>
@@ -78,7 +93,10 @@ function Header() {
             </div>
           </Tooltip>
         </aside>
-        <aside id="lang" style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+        <aside
+          id="lang"
+          style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}
+        >
           <Box sx={{ minWidth: 100 }}>
             <div>
               <Select

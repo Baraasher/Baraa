@@ -19,7 +19,6 @@ function App() {
 
   return (
     <React.Fragment>
-      {/* <Preloader /> */}
       <CssBaseline />
       <Container maxWidth="sm">
         <Box >
@@ -29,8 +28,6 @@ function App() {
           <Title />
         </Box>
 
-
-        {/* <Footer /> */}
       </Container>
     </React.Fragment>
   );
