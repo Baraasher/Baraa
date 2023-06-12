@@ -11,7 +11,6 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import './Header.css';
 import 'animate.css';
 import { useTranslation } from 'react-i18next';
-import i18next from 'i18next';
 
 const languageOptions = [
   { value: 'ar', label: 'عربي', direction: 'rtl', icon: <LanguageIcon /> },
@@ -21,17 +20,8 @@ const languageOptions = [
 function Header() {
   const { t, i18n } = useTranslation();
 
-  // Retrieve dark mode preference from local storage, default to true (dark mode) if not found
-  const [isDarkMode, setIsDarkMode] = useState(localStorage.getItem('darkMode') === 'true');
-  // Retrieve selected language from local storage, default to English if not found
-  const [selectedLanguage, setSelectedLanguage] = useState(
-    JSON.parse(localStorage.getItem('selectedLanguage')) || languageOptions[1]
-  );
-
-  useEffect(() => {
-    // Save dark mode preference to local storage
-    localStorage.setItem('darkMode', isDarkMode);
-  }, [isDarkMode]);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [selectedLanguage, setSelectedLanguage] = useState(languageOptions[1]);
 
   useEffect(() => {
     const theme = createTheme({
@@ -62,19 +52,14 @@ function Header() {
   }, [selectedLanguage, i18n]);
 
   const handleDarkModeToggle = () => {
-    setIsDarkMode(prevMode => !prevMode);
+    setIsDarkMode((prevMode) => !prevMode);
   };
 
-  const handleLanguageChange = event => {
+  const handleLanguageChange = (event) => {
     const selectedValue = event.target.value;
-    const selectedOption = languageOptions.find(option => option.value === selectedValue);
+    const selectedOption = languageOptions.find((option) => option.value === selectedValue);
     setSelectedLanguage(selectedOption);
   };
-
-  useEffect(() => {
-    // Save selected language to local storage
-    localStorage.setItem('selectedLanguage', JSON.stringify(selectedLanguage));
-  }, [selectedLanguage]);
 
   return (
     <ThemeProvider theme={createTheme({ palette: { mode: 'dark' } })}>
@@ -106,11 +91,11 @@ function Header() {
                 MenuProps={{
                   anchorOrigin: {
                     vertical: 'bottom',
-                    horizontal: selectedLanguage.direction === 'ltr' ? 'left' : 'right',
+                    horizontal: selectedLanguage?.direction === 'ltr' ? 'left' : 'right',
                   },
                   transformOrigin: {
                     vertical: 'top',
-                    horizontal: selectedLanguage.direction === 'ltr' ? 'left' : 'right',
+                    horizontal: selectedLanguage?.direction === 'ltr' ? 'left' : 'right',
                   },
                   getContentAnchorEl: null,
                 }}
@@ -129,7 +114,7 @@ function Header() {
                   },
                 }}
               >
-                {languageOptions.map(option => (
+                {languageOptions.map((option) => (
                   <MenuItem
                     key={option.value}
                     value={option.value}
