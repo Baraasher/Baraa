@@ -193,7 +193,7 @@ export default function Title() {
         <div className='items'>
           <li className='item'>
             {!isArabic && (
-              <Tooltip placement="right" title={"📅 Seamlessly Capture and Enhance Your Note-Taking Experience"}>
+              <Tooltip placement="right" title={"📅 Web application for creating and arranging important appointments "}>
                 <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://timescape-liart.vercel.app/">
                   {t('Timescape')}
                 </a>
