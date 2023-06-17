@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import YouTubeIcon from '@mui/icons-material/YouTube';
@@ -15,8 +15,6 @@ export default function Contact() {
   });
 
   const { t, i18n } = useTranslation();
-  const isArabic = i18n.language === 'ar';
-  const language = isArabic ? 'arabic' : 'english';
 
   useEffect(() => {
     const fetchRepoCount = async () => {
@@ -31,10 +29,10 @@ export default function Contact() {
     fetchRepoCount();
   }, []);
 
-  const handleIconHover = (iconId, isHovered) => {
+  const handleIconHover = (iconId) => {
     setHoverStates((prevHoverStates) => ({
       ...prevHoverStates,
-      [iconId]: isHovered,
+      [iconId]: !hoverStates[iconId],
     }));
   };
 
@@ -46,8 +44,8 @@ export default function Contact() {
         target="_blank"
         rel="noopener noreferrer"
         className="contact-icon"
-        onMouseEnter={() => handleIconHover('githubIcon', true)}
-        onMouseLeave={() => handleIconHover('githubIcon', false)}
+        onMouseEnter={() => handleIconHover('githubIcon')}
+        onMouseLeave={() => handleIconHover('githubIcon')}
       >
         <GitHubIcon className={`ContactIcon ${hoverStates.githubIcon ? 'hovered' : ''}`} />
         <Typography display="block" gutterBottom>
@@ -61,8 +59,8 @@ export default function Contact() {
         target="_blank"
         rel="noopener noreferrer"
         className="contact-icon"
-        onMouseEnter={() => handleIconHover('linkedinIcon', true)}
-        onMouseLeave={() => handleIconHover('linkedinIcon', false)}
+        onMouseEnter={() => handleIconHover('linkedinIcon')}
+        onMouseLeave={() => handleIconHover('linkedinIcon')}
       >
         <LinkedInIcon className={`ContactIcon ${hoverStates.linkedinIcon ? 'hovered' : ''}`} />
         <Typography display="block" gutterBottom>
@@ -76,8 +74,8 @@ export default function Contact() {
         target="_blank"
         rel="noopener noreferrer"
         className="contact-icon"
-        onMouseEnter={() => handleIconHover('youtubeIcon', true)}
-        onMouseLeave={() => handleIconHover('youtubeIcon', false)}
+        onMouseEnter={() => handleIconHover('youtubeIcon')}
+        onMouseLeave={() => handleIconHover('youtubeIcon')}
       >
         <YouTubeIcon className={`ContactIcon ${hoverStates.youtubeIcon ? 'hovered' : ''}`} />
         <Typography display="block" gutterBottom>

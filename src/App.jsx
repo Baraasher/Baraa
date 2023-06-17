@@ -1,36 +1,16 @@
-import React, { useEffect } from 'react';
-import './App.css';
-import CssBaseline from '@mui/material/CssBaseline';
-import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import Header from './components/Header/Header';
-import 'animate.css';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
-import Title from './components/Title/Title';
-
-
-AOS.init();
-
+import "./App.css";
+import CssBaseline from "@mui/material/CssBaseline";
+import Container from "@mui/material/Container";
+import Header from "./components/Header/Header";
+import Content from "./components/Title/Content";
 function App() {
-  useEffect(() => {
-    AOS.refresh();
-  }, []);
 
   return (
-    <React.Fragment>
+    <Container maxWidth="sm">
       <CssBaseline />
-      <Container maxWidth="sm">
-        <Box >
-          <Header />
-        </Box>
-        <Box className="animate__animated animate__fadeIn">
-          <Title />
-        </Box>
-
-      </Container>
-    </React.Fragment>
+      <Header />
+      <Content />
+    </Container>
   );
 }
-
 export default App;

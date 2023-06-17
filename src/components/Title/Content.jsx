@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react';
-import './Title.css';
+import { useRef, useState } from 'react';
+import './Content.css';
 import { Box, Typography, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import Contact from '../Contact/Contact';
@@ -9,12 +9,8 @@ import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import emailjs from 'emailjs-com';
-import { Input, Modal, Button, Text, Textarea } from '@nextui-org/react';
+import { Input, Modal, Text, Textarea } from '@nextui-org/react';
 import toast, { Toaster } from 'react-hot-toast';
-
-
-
-
 const StyledBadge = styled(Badge)(({ theme }) => ({
   '& .MuiBadge-badge': {
     backgroundColor: '#44b700',
@@ -44,36 +40,22 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-const SmallAvatar = styled(Avatar)(({ theme }) => ({
-  width: 22,
-  height: 22,
-  border: `2px solid ${theme.palette.background.paper}`,
-}));
-
-export default function Title() {
+export default function Content() {
   const { t, i18n } = useTranslation();
   const isArabic = i18n.language === 'ar';
   const language = isArabic ? 'arabic' : 'english';
-
   const form = useRef();
   const [visible, setVisible] = useState(false);
-
   const openModal = () => {
     setVisible(true);
-
   };
-
   const closeModal = () => {
     setVisible(false);
-
   };
-
   const closeModelNotification = () => {
     console.log("closed");
-
     var messageInput = document.getElementById('messageInput');
     var emailInput = document.getElementById('emailInput');
-
     if (messageInput.value === '' && emailInput.value === '') {
       toast(t('emptyFieldsMessage'), {
         icon: '⚠️',
@@ -90,17 +72,11 @@ export default function Title() {
       toast(t('successMessage'), {
         icon: '✉️',
       });
-
       setVisible(false);
     }
   };
-
-
-
-
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         'service_mq2gcw8',
@@ -117,20 +93,17 @@ export default function Title() {
         }
       );
   };
-
   return (
     <>
       <Box sx={{ margin: '4rem 0 ' }}>
-
         <Toaster />
-
         <div>
           <Modal
             closeButton
             aria-labelledby="modal-title"
             open={visible}
             onClose={closeModal}
-            style={{ direction: 'rtl' }} // Add this line to set the right-to-left direction
+            style={{ direction: 'rtl' }}
           >
             <Modal.Header>
               <Text id="modal-title" size={18}>
@@ -161,9 +134,7 @@ export default function Title() {
               </form>
             </Modal.Body>
           </Modal>
-
         </div>
-
         <Typography variant="h6" gutterBottom>
           {t('Title')}
         </Typography>
