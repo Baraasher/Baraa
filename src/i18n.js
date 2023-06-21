@@ -7,12 +7,13 @@ const resources = {
             Title: "Baraa Alsher",
             "Job Title": "React.js Frontend Developer",
             Description:
-                "Hello! I'm Baraa Alsher, a skilled Front End Developer specializing in creating innovative web designs and features. Proficient in HTML, CSS, JavaScript, and React, I have a proven ability to adapt quickly to new technologies. With a meticulous approach to coding, I focus on delivering high-quality solutions that meet client requirements. I excel at troubleshooting complex code issues and ensuring adherence to design standards. Through my work, I aim to create engaging websites that leave a lasting impact. Explore my website to learn more about my skills and projects.",
+                "Hi, I'm Baraa. I'm a Software Engineer with expertise in React code. I'm skilled at creating innovative web applications and features that meet client requirements. I'm also proficient at troubleshooting complex code issues and ensuring adherence to React best practices. I aim to create engaging and user-friendly React applications that leave a lasting impact.",
             "Follow Description":
                 "I'm a big fan of side-projects. You can find some of my projects below.",
             Timescape: "Timescape",
             SNote: "SNote",
             "Gradients CSS": "Gradients CSS",
+            GitLinker: "GitLinker",
             mailto:
                 "If you have any questions or want to discuss a project, feel free to email me at ",
             footer: "Baraa - All rights reserved.",
@@ -38,12 +39,13 @@ const resources = {
             Title: "براء الشاعر",
             "Job Title": "مهندس برمجيات",
             Description:
-                " مرحبًا! أنا براء الشاعر، مهندس برمجيات متخصص في تطوير تطبيقات الويب المبتكرة. لدي خبرة قوية في لغات HTML، CSS، JavaScript وReact، وأستطيع التكيف بسهولة مع أحدث التقنيات. أهتم بشدة بتفاصيل البرمجة وأركز على تقديم حلول عالية الجودة لتلبية متطلبات العملاء. أتميز في معالجة المشاكل المعقدة في الشفرة وضمان الالتزام بمعايير التصميم. هدفي هو إنشاء تطبيقات ويب جذابة تترك أثرًا إيجابيًا.",
+                "مرحبًا ، أنا براء. مهندس برمجيات.أعمل على إنشاء تطبيقات الويب مبتكره. أعمل ايضا في استكشاف مشكلات التعليمات البرمجية المعقدة وإصلاحها وضمان الالتزام بأفضل نتيجه. أهدف إلى إنشاء تطبيقات ويب تفاعلية وسهلة الاستخدام تترك أثرًا دائمًا.",
             "Follow Description":
                 "أنا مهتم بالمشاريع الفرعية. يمكنك العثور على بعض المشاريع الخاصة بي أدناه.",
             Timescape: "Timescape (تطبيق ويب لحفظ المواعيد أونلاين)",
             SNote: "SNote (تطبيق ويب لحفظ الملاحظات)",
             "Gradients CSS": "Gradients CSS (عباره عن أداه لنسخ تدرجات الألوان)",
+            GitLinker: "GitLinker (مشروع اداره Github repositories)",
             mailto: "اذا كان لديك أي استفسار تواصل معي على الايميل :",
             footer: "براء",
             "dark mode": "الوضع اليلي",

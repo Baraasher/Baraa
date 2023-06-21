@@ -204,6 +204,24 @@ export default function Content() {
               </a>
             )}
           </li>
+
+
+          <li className='item'>
+            {!isArabic && (
+              <Tooltip placement="right" title={"Web app to mange Github repositories"}>
+                <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gitlinker.vercel.app/">
+                  {t('GitLinker')}
+                </a>
+              </Tooltip>
+            )}
+            {isArabic && (
+              <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gradientscss.vercel.app/">
+                {t('Gradients CSS')}
+              </a>
+            )}
+          </li>
+
+
         </div>
         <br />
         <Typography variant="body2" gutterBottom>
