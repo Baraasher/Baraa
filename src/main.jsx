@@ -1,5 +1,5 @@
 import React, { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'; // Import createRoot from 'react-dom/client'
 import App from './App.jsx';
 import i18n from './i18n.js';
 import { inject } from '@vercel/analytics';
@@ -7,7 +7,7 @@ import 'animate.css';
 
 inject();
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+createRoot(document.getElementById('root')).render( // Use createRoot directly
   <StrictMode>
     <App i18n={i18n} />
   </StrictMode>
