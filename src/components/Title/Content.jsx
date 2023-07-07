@@ -215,8 +215,8 @@ export default function Content() {
               </Tooltip>
             )}
             {isArabic && (
-              <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gradientscss.vercel.app/">
-                {t('Gradients CSS')}
+              <a id='linkItem' target='_blank' rel='noopener noreferrer' href="https://gitlinker.vercel.app/">
+                  {t('GitLinker')}
               </a>
             )}
           </li>
